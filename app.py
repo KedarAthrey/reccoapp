@@ -39,12 +39,12 @@ movies_dict = pickle.load(open('movie_dict.pkl', 'rb'))
 movies= pd.DataFrame(movies_dict)
 similarity= pickle.load(open('similarity.pkl', 'rb'))
 
-st.title('Movie Reccomender System')
+st.title('Movie Recommender System')
 selected_movie_name  = st.selectbox(
-'What movie do you want the reccomendations to be similar to?',
+'What movie do you want the recommendations to be similar to?',
 movies['title'].values)
 
-if st.button('Reccomend'):
+if st.button('Recommend'):
     names,posters = reccomend(selected_movie_name)
     import streamlit as st
     col1, col2, col3 ,col4 ,col5 = st.columns(5)
